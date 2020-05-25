@@ -1,0 +1,100 @@
+
+
+
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
+
+
+.carousel {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.842), rgb(0, 0, 0));
+    background-repeat: no-repeat;
+    background-size: 100% 99.5%;
+
+    img {
+        width: 100%;
+        opacity: 0.7;
+    }
+
+    header {
+        width: 30%;
+        position: absolute;
+        top: 15%;
+        left: 10%;
+        z-index: 50;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 100%;
+            opacity: 1;
+
+        }
+
+        .subheader {
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 2px;
+            background-color: white;
+            padding: 6px 10px;
+        }
+
+    }
+
+    &__slide {
+        /* Caption text */
+        &--text {
+            font-size: 2rem;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* Next & previous buttons */
+    &__prev, &__next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position of next*/
+    &__next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+  
+    /* Hover blck background see thru */
+    &__prev:hover, &__next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1s;
+        animation-name: fade;
+        animation-duration: 1s;
+    }
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+}

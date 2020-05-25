@@ -1,0 +1,23 @@
+{
+  "name": "sass_landing",
+  "version": "1.0.0",
+  "description": "simple landing page with sass boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "node-sass sass/main.scss css/style.css",
+    "watch-sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "http-server -a localhost -p 3000",
+    "start": "npm-run-all --parallel build-sass watch-sass devserver "
+  },
+  "author": "Grace Averis",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "http-server": "^0.12.3",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}

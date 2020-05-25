@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Git_Spy - check and analyze github user profiles</title>
+    </head>
+
+    <body>
+        <main>
+            <section class="carousel-section">
+
+                <div class="carousel">
+                    <header>
+                        <img
+                            src="img/git_spy_logo-white.svg"
+                            alt="Git_spy logo"
+                            />
+                        <h1 class="subheader">Quick analysis of github profiles </h1>
+                    </header>
+                    
+                    <div class="carousel__slide fade">
+                        <img 
+                        srcset="/img/1x/code_close_up.jpg 1x, /img/2x/code_close_up.jpg 2x"
+                        alt="close up of html and php code">
+                    </div>
+                              
+                    <div class="carousel__slide fade">
+                        <img
+                        srcset="/img/1x/web_developer_at_work.jpg 1x, /img/2x/web_developer_at_work.jpg 2x" 
+                        alt="web develop at work with multiple screens">
+                    </div>
+                              
+                    <div class="carousel__slide fade">
+                        <img
+                        srcset="/img/1x/web_developer_on_laptop.jpg 1x, /img/2x/web_developer_on_laptop.jpg 2x"
+                        alt="web developer working remotely from a laptop">
+                    </div>
+
+                    <div class="carousel__slide fade">
+                        <img
+                        srcset="/img/1x/web_developer_workspace.jpg 1x, /img/2x/web_developer_workspace.jpg 2x"
+                        alt="wed developer workspace with desk, laptop and plant">
+                    </div>
+                              
+                    <a class="carousel__prev" onclick="changeSlide(-1)">&#10094;</a>
+                    <a class="carousel__next" onclick="changeSlide(1)">&#10095;</a>
+                </div>
+            </section>
+
+            <section class="github-section">
+                <div class="github">
+
+                    
+                    <!-- form -->
+                    <form id="github__form">
+                        <label> Enter username: <input type="text" id="username_input"></label>
+                        <button type="submit">Search</button>
+                    </form>
+
+                    <!-- error -->
+                    <div class="github__error fade">
+                        <p id="error"></p>
+                    </div>
+
+                    </div class="github__display">
+                        <h1 class="github-display__name" id="name">TEST</h1>
+                        <div class="github-display__repo-count" id="repo-count"></div>
+                        <div class="github-display__repo-list" id="repo-list"></div>
+                    <div>    
+                </div>
+            </section>
+        </main>
+        <script src="carousel.js"></script>
+        <script src="./node_modules/axios/dist/axios.min.js"></script>
+        <script src="github.js"></script>
+    </body>
+</html>

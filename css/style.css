@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffff; }
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 120vh; }
+
+::selection {
+  background-color: #2270e4;
+  color: #ffff; }
+
+h1 {
+  font-size: 3rem;
+  /* On screens that are 600px or less, set the background color to olive */ }
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem; } }
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 1.5rem; } }
+
+.carousel {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.842), black);
+  background-repeat: no-repeat;
+  background-size: 100% 99.5%;
+  /* Next & previous buttons */
+  /* Position of next*/
+  /* Hover blck background see thru */ }
+  .carousel img {
+    width: 100%;
+    opacity: 0.7; }
+  .carousel header {
+    width: 30%;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    z-index: 50;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .carousel header img {
+      width: 100%;
+      opacity: 1; }
+    .carousel header .subheader {
+      font-weight: 300;
+      text-align: center;
+      letter-spacing: 2px;
+      background-color: white;
+      padding: 6px 10px; }
+  .carousel__slide {
+    /* Caption text */ }
+    .carousel__slide--text {
+      font-size: 2rem;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center; }
+  .carousel__prev, .carousel__next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none; }
+  .carousel__next {
+    right: 0;
+    border-radius: 3px 0 0 3px; }
+  .carousel__prev:hover, .carousel__next:hover {
+    background-color: rgba(0, 0, 0, 0.8); }
+  .carousel .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+.github .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 5s;
+  animation-name: fade;
+  animation-duration: 5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .4; }
+  to {
+    opacity: 1; } }
