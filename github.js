@@ -1,18 +1,15 @@
 //form vals
 const form = document.getElementById('github-form'),
-      errorDisplay = document.getElementById('error'); 
-form.addEventListener('submit', findProfile);
-
+      errorDisplay = document.getElementById('error')
+form.addEventListener('submit', findProfile)
+//other node vals
 const nameDisplay = document.getElementById('name'),
       repoListDisplay = document.getElementById('repo-list'),
       avatarDisplay = document.getElementById('avatar'),
       repoTitleDisplay = document.getElementById('repo-title'),
       githubDisplay = document.getElementById('github-display')
 
-
-//other node vals
 function findProfile(event) {
-
     let avatar, name, repoCount, repos
     let username = document.getElementById('username_input').value
 
@@ -35,7 +32,6 @@ function findProfile(event) {
         } else {
             showError('user has no repos')
         }
-
     //error handling from first call
     }).catch( err => {
         if (err.response) {
@@ -48,8 +44,8 @@ function findProfile(event) {
             showError('Something went wrong - try again later')
         }
     })
-    event.preventDefault();
-    form.reset();
+    event.preventDefault()
+    form.reset()
 }
 
 showError = (err) => {
@@ -79,9 +75,6 @@ insertData = (name, avatar, repoCount, repos, username) => {
         } else {
             description = repo.description
         }
-
-        console.log('test', description)
-
         repoListDisplay.innerHTML += 
         `<div class="github__display__repo">
              <p>Created on ${formatDate(repo.created_at)}</p>
