@@ -83,7 +83,12 @@
         }
 
         &__repo {
-            padding-bottom: 2rem;
+            padding-bottom: 3rem;
+
+            p {
+                font-size: 1rem;
+                padding-bottom: 5px;
+            }
 
             a {
                 color: $color-black;
@@ -103,6 +108,14 @@
                         transition: 0.3s;
                         padding-left: 12px;
                     }
+                }
+            }
+
+            h4 {
+                padding-top: 10px;
+                font-weight: 200;
+                span {
+                    font-weight: 600;
                 }
             }
         }

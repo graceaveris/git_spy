@@ -6,15 +6,16 @@ I've been using frameworls (vue + react) for a while now, so it was good to back
 
 What I would have done next (if i'd had more time):
 
-- Made the design a lot more interesting and cooler! Its wite basic as-s.
+- Made the design a lot more interesting and cooler! Its quite basic as-is.
+  (if you want to see the landing pages im currently building for a Valencia based company heres sneaky vid (note WIP there are a few bugs youll see) )
 
 - Added autoprefixer to build process so it looks nice all over the web.
 
-- Gone through and made it reposive in amore organised a nd thorough way.
+- Gone through and made it resposive in a more organised and thorough way.
 
-- Looked into firther optimising my images and creating a wider breadth for srcset.
+- Looked into further optimising my images and creating a wider breadth for srcset.
 
-- And tidied my code more!!
+- Tidied my code more!!
 
 
 Looking forward to your feedback :)

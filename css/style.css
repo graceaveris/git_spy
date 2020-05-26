@@ -168,7 +168,10 @@ body {
     .github__display__repo-list {
       margin-top: 2rem; }
     .github__display__repo {
-      padding-bottom: 2rem; }
+      padding-bottom: 3rem; }
+      .github__display__repo p {
+        font-size: 1rem;
+        padding-bottom: 5px; }
       .github__display__repo a {
         color: #353535;
         cursor: pointer;
@@ -184,6 +187,11 @@ body {
           .github__display__repo a:hover span {
             transition: 0.3s;
             padding-left: 12px; }
+      .github__display__repo h4 {
+        padding-top: 10px;
+        font-weight: 200; }
+        .github__display__repo h4 span {
+          font-weight: 600; }
   .github .fade {
     animation-name: fade;
     animation-duration: .75s; }

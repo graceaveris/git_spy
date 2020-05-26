@@ -25,7 +25,7 @@ function findProfile(event) {
             name = response.data.name
             repoCount = response.data.public_repos
             //call next set of data
-            axios.get(`https://api.github.com/users/${username}/repos`)
+            axios.get(`https://api.github.com/users/${username}/repos?per_page=100`)
             .then((response) => {
                 repos = response.data
                 insertData(name, avatar, repoCount, repos, username)
@@ -72,24 +72,27 @@ insertData = (name, avatar, repoCount, repos, username) => {
     //clear the repo dispay
     repoListDisplay.innerHTML = ""
     //looping the repos
+    let description;
     repos.forEach(repo => {
-        console.log(repo)
         if (!repo.description) {
-            description = "Untitled repo"
+            description = "no description"
         } else {
             description = repo.description
         }
-       
+
+        console.log(repo)
+
         repoListDisplay.innerHTML += 
         `<div class="github__display__repo">
-             <h4>Created on ${formatDate(repo.created_at)}</h4>
-             <a href="${repo.html_url}" target="_blank"><h4>${description}<span>&#10095;</span></h4></a>
-             <h4>Built with ${repo.language}</h4>
+             <p>Created on ${formatDate(repo.created_at)}</p>
+             <a href="${repo.html_url}" target="_blank"><h3>${repo.name}<span>&#10095;</span></h3></a>
+             <h4>${description}</h4>
+             <h4>Built with <span>${repo.language}</span></h4>
         </div>`
     });
     githubDisplay.style.display = "block"
 }
 
 formatDate = (date) => {
-    console.log(date.substring(0, 10).split("-").reverse().join("-"))
+    return date.substring(0, 10).split("-").reverse().join("-")
 }
