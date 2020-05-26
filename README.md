@@ -1,5 +1,5 @@
 
-Hi Whisbi team!
+Hi team!
 Thanks for giving me the chance to take a shot with this challenge.
 
 I've been using frameworls (vue + react) for a while now, so it was good to back to vanilla to remeber how that all works without any helpers.
@@ -17,7 +17,7 @@ What I would have done next (if i'd had more time):
 - Tidied my code more, and refractored much more.
 
 - Made the design a lot more interesting and cooler! Its quite basic as-is.
-  ( FYI if you want to see the landing pages im currently building for a Valencia based company heres sneaky vid (note this is a WIP so there are a few bugs youll see... just to get the idea of my aesthic ) https://drive.google.com/drive/folders/1zDrDWItqf2PZXu-kQpCnbZ__bnzZ1Yk1?usp=sharing) )
+  ( FYI if you want to see the landing pages im currently building for a local company (note this is a WIP so there are a few bugs youll see... just to get the idea of my aestheic ) https://drive.google.com/drive/folders/1zDrDWItqf2PZXu-kQpCnbZ__bnzZ1Yk1?usp=sharing) )
 
 
 Looking forward to your feedback :)
