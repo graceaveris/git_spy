@@ -2,7 +2,7 @@
 Hi team!
 Thanks for giving me the chance to take a shot with this challenge.
 
-I've been using frameworls (vue + react) for a while now, so it was good to back to vanilla to remeber how that all works without any helpers.
+I've been using frameworks (vue + react) for a while now, so it was good to back to vanilla to remember how that all works without any helpers.
 
 What I would have done next (if i'd had more time):
 
