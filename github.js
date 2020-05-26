@@ -72,20 +72,20 @@ insertData = (name, avatar, repoCount, repos, username) => {
     //clear the repo dispay
     repoListDisplay.innerHTML = ""
     //looping the repos
-    let description;
     repos.forEach(repo => {
+        let description;
         if (!repo.description) {
             description = "no description"
         } else {
             description = repo.description
         }
 
-        console.log(repo)
+        console.log('test', description)
 
         repoListDisplay.innerHTML += 
         `<div class="github__display__repo">
              <p>Created on ${formatDate(repo.created_at)}</p>
-             <a href="${repo.html_url}" target="_blank"><h3>${repo.name}<span>&#10095;</span></h3></a>
+             <a href="${repo.html_url}" target="_blank"><h2>${repo.name}<span>&#10095;</span></h2></a>
              <h4>${description}</h4>
              <h4>Built with <span>${repo.language}</span></h4>
         </div>`
