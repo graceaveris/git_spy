@@ -2,27 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="description" content="analyse github profiles and fetch user repos with this simple app">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Sass, github, programming, coding">
+        <meta name="author" content="Grace Averis">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-
         <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        
         <title>Git_Spy - check and analyze github user profiles</title>
     </head>
 
     <body>
         <main>
-            <section class="carousel-section">
-
+            <section>
                 <div class="carousel">
-                    <header>
+                    <header class="carousel__header">
                         <img
                             src="img/git_spy_logo-white.svg"
                             alt="Git_spy logo"
                             />
-                        <h1 class="subheader">Quick analysis of github profiles </h1>
+                        <h1 class="subheader">Quick github analysis</h1>
                     </header>
                     
                     <div class="carousel__slide fade">
@@ -53,32 +50,37 @@
                     <a class="carousel__next" onclick="changeSlide(1)">&#10095;</a>
                 </div>
             </section>
-
-            <section class="github-section">
-                <div class="github">
-
-                    
-                    <!-- form -->
-                    <form id="github__form">
-                        <label> Enter username: <input type="text" id="username_input"></label>
-                        <button type="submit">Search</button>
+            <section>
+                <!-- form area -->
+                <div class="github__form">
+                    <form class="github__form__main" id="github-form">
+                        <input type="text" id="username_input" placeholder="Enter github username">
+                        <button type="submit" href="#github-display">Search</button>
                     </form>
 
                     <!-- error -->
-                    <div class="github__error fade">
+                    <div class="github__form__error fade">
                         <p id="error"></p>
                     </div>
-
-                    </div class="github__display">
-                        <h1 class="github-display__name" id="name">TEST</h1>
-                        <div class="github-display__repo-count" id="repo-count"></div>
-                        <div class="github-display__repo-list" id="repo-list"></div>
-                    <div>    
                 </div>
+            </section>
+            <section class="github">
+                <div class="github__display fade" id="github-display">
+                    <div class="github__display__profile">
+                        <div id="avatar"></div>
+                        <div class="github__display__profile__info">
+                            <h1 id="name">
+                            <h2 id="repo-title"></h2>
+                        </div>
+                    </div>
+                        <div class="github__display__repo-container">
+                        <div class="github__display__repo-list" id="repo-list"></div>
+                    </div>
+                </div>  
             </section>
         </main>
         <script src="carousel.js"></script>
         <script src="./node_modules/axios/dist/axios.min.js"></script>
         <script src="github.js"></script>
     </body>
-</html>
+</html> 

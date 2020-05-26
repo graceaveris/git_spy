@@ -1,16 +1,118 @@
 .github {
+    background-color: $color-white;
+    &__form {
+        padding-bottom: 25px;
+        text-align: center;
+        background-color: $color-pale-grey;
+        transform: translateY(-5px);
+        padding: 60px 30px;
 
-    .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 5s;
-        animation-name: fade;
-        animation-duration: 5s;
-    }
-    @-webkit-keyframes fade {
-        from {opacity: .4} 
-        to {opacity: 1}
-    }
+        &__main {
+            width: 100%;
+            h3 {
+                color: $color-black;
+                margin-bottom: 8px;
+            }
+
+            input {
+                font-size: 1.2rem;
+                padding: 12px 30px;
+                height: 100%;
+                border: none;
     
+                border: 2px solid $color-white;
+                &:focus { outline:0 !important; }
+
+            }
+            button {
+                font-size: 1.2rem;
+                font-weight: 600;
+                border: 2px solid $color-primary;
+                padding: 12px 20px;
+                margin-left: 6px;
+                color: $color-primary;
+                &:hover {
+                    border: 2px solid $color-primary-dark;
+                    color: $color-primary-dark;
+                    cursor: pointer;
+                }
+                &:focus { outline:0 !important; }
+            }
+        }
+
+        &__error {
+            p {
+                font-size: 1rem;
+                padding-top: 15px;
+                color: $color-primary-dark;
+            }
+        }
+    }
+
+    &__display {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: none;
+        background-color: $color-white;
+
+        &__profile {
+            display: flex;
+            align-items: center;
+
+            img {
+                border-radius: 100%;
+                max-width: 12rem;
+            }
+
+            &__info {
+                padding-left: 30px;
+            }
+        }
+
+        &__repo-container {
+            padding-top: 25px;
+        }
+
+        &__repo-title {
+            margin-top: 5px;
+        }
+
+        &__repo-list {
+            margin-top: 2rem;
+        }
+
+        &__repo {
+            padding-bottom: 2rem;
+
+            a {
+                color: $color-black;
+                cursor: pointer;
+                font-size: 1.3rem;
+                text-decoration: none;
+                padding-top: 2px;
+                span {
+                    padding-left: 10px;
+                    font-size: 1rem; 
+                }
+
+                &:hover {
+                    transition: 0.3s;
+                    color: $color-primary;
+                    span {
+                        transition: 0.3s;
+                        padding-left: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    //animations
+    .fade {
+        animation-name: fade;
+        animation-duration: .75s;
+    }
     @keyframes fade {
         from {opacity: .4} 
         to {opacity: 1}

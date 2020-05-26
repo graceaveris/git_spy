@@ -1,11 +1,16 @@
-const form = document.getElementById('github__form');
-const errorDisplay = document.getElementById('error'); 
+//form vals
+const form = document.getElementById('github-form'),
+      errorDisplay = document.getElementById('error'); 
 form.addEventListener('submit', findProfile);
 
-const nameDisplay = document.getElementById('name')
-const repoCountDisplay = document.getElementById('repo-count')
-const repoListDisplay = document.getElementById('repo-list')
+const nameDisplay = document.getElementById('name'),
+      repoListDisplay = document.getElementById('repo-list'),
+      avatarDisplay = document.getElementById('avatar'),
+      repoTitleDisplay = document.getElementById('repo-title'),
+      githubDisplay = document.getElementById('github-display')
 
+
+//other node vals
 function findProfile(event) {
 
     let avatar, name, repoCount, repos
@@ -13,28 +18,32 @@ function findProfile(event) {
 
     axios.get(`https://api.github.com/users/${username}` )
     .then((response) => {
+        githubDisplay.style.display = "none"
         //if the user has repos
         if (response.data.public_repos) { 
             avatar = response.data.avatar_url
             name = response.data.name
             repoCount = response.data.public_repos
+            //call next set of data
             axios.get(`https://api.github.com/users/${username}/repos`)
             .then((response) => {
                 repos = response.data
-                insertData(name, avatar, repoCount, repos)
+                insertData(name, avatar, repoCount, repos, username)
             }).catch( err => {
-                showError(err, 'something went wrong- try again later')
+                showError(err, 'Something went wrong- try again later')
             })
-        //With no repos we tell the user
         } else {
-            //if user doesnt have repos
             showError('user has no repos')
         }
 
-    //error handling
+    //error handling from first call
     }).catch( err => {
-        if (err.response.status === 404) {
-            showError('user not found')
+        if (err.response) {
+            if (err.response.status === 404) {
+                showError('User not found')
+            } else {
+                showError('Something went wrong - try again later')
+            }
         } else {
             showError('Something went wrong - try again later')
         }
@@ -53,23 +62,34 @@ hideError = () => {
     errorDisplay.style.display = "none"
 }
 
-insertData = (name, avatar, repoCount, repos) => {
-    //adding teh basic data
+insertData = (name, avatar, repoCount, repos, username) => {
+    //adding the basic data
     nameDisplay.textContent = name
-    repoCountDisplay.textContent = repoCount
     repoListDisplay.textContent = repos
-    
+    avatarDisplay.innerHTML = `<img src="${avatar}" alt="github avatar for ${name}"/>`
+    repoTitleDisplay.textContent = `${repoCount} public repositories`
+
     //clear the repo dispay
     repoListDisplay.innerHTML = ""
-
     //looping the repos
     repos.forEach(repo => {
         console.log(repo)
+        if (!repo.description) {
+            description = "Untitled repo"
+        } else {
+            description = repo.description
+        }
+       
         repoListDisplay.innerHTML += 
         `<div class="github__display__repo">
-             <h2>${repo.description}</h2>
-             <p>${repo.description}</p>
-             <a href=${repo.html_url} target="_blank">${repo.html_url}</a>
+             <h4>Created on ${formatDate(repo.created_at)}</h4>
+             <a href="${repo.html_url}" target="_blank"><h4>${description}<span>&#10095;</span></h4></a>
+             <h4>Built with ${repo.language}</h4>
         </div>`
     });
+    githubDisplay.style.display = "block"
+}
+
+formatDate = (date) => {
+    console.log(date.substring(0, 10).split("-").reverse().join("-"))
 }

@@ -1,35 +1,48 @@
+h1 {
+  font-size: 2rem;
+  letter-spacing: 1px; }
+
+h2 {
+  font-size: 1.6rem;
+  letter-spacing: 1px; }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.2rem; }
+
+p {
+  font-size: .8rem; }
+
 *,
 *::after,
 *::before {
   margin: 0;
-  padding: 0;
-  box-sizing: inherit; }
+  padding: 0; }
 
-html {
-  font-size: 62.5%;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #ffff; }
+html, main {
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #ededed;
+  color: #353535;
+  min-height: 100vh;
+  scroll-behavior: smooth; }
 
 body {
-  box-sizing: border-box;
-  position: relative;
-  min-height: 120vh; }
+  box-sizing: border-box; }
 
 ::selection {
-  background-color: #2270e4;
-  color: #ffff; }
-
-h1 {
-  font-size: 3rem;
-  /* On screens that are 600px or less, set the background color to olive */ }
-
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 1.5rem; } }
+  background-color: #219646;
+  color: white; }
 
 @media screen and (max-width: 900px) {
-  h1 {
-    font-size: 1.5rem; } }
+  html {
+    font-size: 90%; } }
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 80%; } }
 
 .carousel {
   width: 100%;
@@ -37,42 +50,39 @@ h1 {
   z-index: 0;
   background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.842), black);
   background-repeat: no-repeat;
-  background-size: 100% 99.5%;
-  /* Next & previous buttons */
-  /* Position of next*/
-  /* Hover blck background see thru */ }
+  background-size: 100% 99%;
+  position: top; }
   .carousel img {
-    width: 100%;
-    opacity: 0.7; }
-  .carousel header {
-    width: 30%;
+    opacity: 0.7;
+    width: 100%; }
+  .carousel__header {
     position: absolute;
-    top: 15%;
-    left: 10%;
+    top: 18%;
+    left: 12%;
     z-index: 50;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; }
-    .carousel header img {
+    .carousel__header img {
       width: 100%;
       opacity: 1; }
-    .carousel header .subheader {
+    .carousel__header .subheader {
       font-weight: 300;
       text-align: center;
       letter-spacing: 2px;
-      background-color: white;
+      color: white;
+      font-weight: 800;
       padding: 6px 10px; }
+      @media screen and (max-width: 900px) {
+        .carousel__header .subheader {
+          font-size: 1.3rem; } }
+      @media screen and (max-width: 1200px) {
+        .carousel__header .subheader {
+          font-size: 1.4rem; } }
   .carousel__slide {
     /* Caption text */ }
-    .carousel__slide--text {
-      font-size: 2rem;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center; }
   .carousel__prev, .carousel__next {
     cursor: pointer;
     position: absolute;
@@ -84,24 +94,14 @@ h1 {
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none; }
   .carousel__next {
-    right: 0;
-    border-radius: 3px 0 0 3px; }
+    right: 0; }
   .carousel__prev:hover, .carousel__next:hover {
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: #353535; }
   .carousel .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1s;
     animation-name: fade;
     animation-duration: 1s; }
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4; }
-  to {
-    opacity: 1; } }
 
 @keyframes fade {
   from {
@@ -109,17 +109,84 @@ h1 {
   to {
     opacity: 1; } }
 
-.github .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 5s;
-  animation-name: fade;
-  animation-duration: 5s; }
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4; }
-  to {
-    opacity: 1; } }
+.github {
+  background-color: white; }
+  .github__form {
+    padding-bottom: 25px;
+    text-align: center;
+    background-color: #ededed;
+    transform: translateY(-5px);
+    padding: 60px 30px; }
+    .github__form__main {
+      width: 100%; }
+      .github__form__main h3 {
+        color: #353535;
+        margin-bottom: 8px; }
+      .github__form__main input {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+        height: 100%;
+        border: none;
+        border: 2px solid white; }
+        .github__form__main input:focus {
+          outline: 0 !important; }
+      .github__form__main button {
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: 2px solid #219646;
+        padding: 12px 20px;
+        margin-left: 6px;
+        color: #219646; }
+        .github__form__main button:hover {
+          border: 2px solid #06792a;
+          color: #06792a;
+          cursor: pointer; }
+        .github__form__main button:focus {
+          outline: 0 !important; }
+    .github__form__error p {
+      font-size: 1rem;
+      padding-top: 15px;
+      color: #06792a; }
+  .github__display {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: none;
+    background-color: white; }
+    .github__display__profile {
+      display: flex;
+      align-items: center; }
+      .github__display__profile img {
+        border-radius: 100%;
+        max-width: 12rem; }
+      .github__display__profile__info {
+        padding-left: 30px; }
+    .github__display__repo-container {
+      padding-top: 25px; }
+    .github__display__repo-title {
+      margin-top: 5px; }
+    .github__display__repo-list {
+      margin-top: 2rem; }
+    .github__display__repo {
+      padding-bottom: 2rem; }
+      .github__display__repo a {
+        color: #353535;
+        cursor: pointer;
+        font-size: 1.3rem;
+        text-decoration: none;
+        padding-top: 2px; }
+        .github__display__repo a span {
+          padding-left: 10px;
+          font-size: 1rem; }
+        .github__display__repo a:hover {
+          transition: 0.3s;
+          color: #219646; }
+          .github__display__repo a:hover span {
+            transition: 0.3s;
+            padding-left: 12px; }
+  .github .fade {
+    animation-name: fade;
+    animation-duration: .75s; }
 
 @keyframes fade {
   from {
