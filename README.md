@@ -6,9 +6,6 @@ I've been using frameworls (vue + react) for a while now, so it was good to back
 
 What I would have done next (if i'd had more time):
 
-- Made the design a lot more interesting and cooler! Its quite basic as-is.
-  (if you want to see the landing pages im currently building for a Valencia based company heres sneaky vid (note this is a WIP so there are a few bugs youll see... just to get the idea of my aesthic https://drive.google.com/drive/folders/1zDrDWItqf2PZXu-kQpCnbZ__bnzZ1Yk1?usp=sharing) )
-
 - Added autoprefixer to build process so it looks nice all over the web.
 
 - Gone through and made it resposive in a more organised and thorough way.
@@ -17,7 +14,10 @@ What I would have done next (if i'd had more time):
 
 - Sorted the returned data in a sensible way (last commit or some such).
 
-- Tidied my code more!!
+- Tidied my code more, and refractored much more.
+
+- Made the design a lot more interesting and cooler! Its quite basic as-is.
+  ( FYI if you want to see the landing pages im currently building for a Valencia based company heres sneaky vid (note this is a WIP so there are a few bugs youll see... just to get the idea of my aesthic ) https://drive.google.com/drive/folders/1zDrDWItqf2PZXu-kQpCnbZ__bnzZ1Yk1?usp=sharing) )
 
 
 Looking forward to your feedback :)
@@ -35,4 +35,4 @@ Looking forward to your feedback :)
 
 - View project at http://localhost:3000/
 
-( or "npm build-sass" + vscode liveserver)
+( or "npm run build-sass" + vscode liveserver)
